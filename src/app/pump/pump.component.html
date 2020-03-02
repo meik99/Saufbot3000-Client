@@ -1,0 +1,58 @@
+<div class="row mt-4">
+  <div class="col-12">
+    <h1>Pumpen</h1>
+    <hr>
+  </div>
+</div>
+
+<div class="row mt-4" *ngFor="let pump of pumps">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-2">
+            <div class="form-group">
+              <label for="id{{pump.id}}">Id</label>
+              <input type="text" id="id{{pump.id}}" [ngModel]="pump.id" class="form-control" disabled>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="form-group">
+              <label for="pin{{pump.id}}">Pin</label>
+              <input class="form-control" id="pin{{pump.id}}" [ngModel]="pump.pin" type="text" disabled>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="form-group">
+              <label for="color1{{pump.id}}">Farbe 1</label>
+              <input
+                class="form-control"
+                id="color1{{pump.id}}"
+                [style]="{ 'background-color' : pump.colors[0] }"
+                type="text" disabled>
+            </div>
+          </div>
+           <div class="col-2">
+            <div class="form-group">
+              <label for="color2{{pump.id}}">Farbe 2</label>
+              <input
+                class="form-control"
+                id="color2{{pump.id}}"
+                [style]="{ 'background-color' : pump.colors[1] }"
+                type="text" disabled>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="form-group">
+              <label for="beverage{{pump.id}}">Zutat</label>
+              <select class="form-control" id="beverage{{pump.id}}" [(ngModel)]="pump.beverage" (ngModelChange)="updatePump(pump)">
+                <option [value]="0">Nichts</option>
+                <option *ngFor="let beverage of beverages" [value]="beverage.id">{{beverage.name}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

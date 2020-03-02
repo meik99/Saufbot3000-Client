@@ -6,11 +6,13 @@ import {AppRoutingModule} from './app-routing.module';
 import {FormsModule} from '@angular/forms';
 import { BeverageComponent } from './beverage/beverage.component';
 import {HttpClientModule} from '@angular/common/http';
+import { PumpComponent } from './pump/pump.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BeverageComponent
+    BeverageComponent,
+    PumpComponent
   ],
   imports: [
     BrowserModule,

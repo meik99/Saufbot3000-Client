@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import {Beverage} from '../../entity/Beverage';
+import {Beverage} from '../../../entity/Beverage';
 import {BeverageRepositoryService} from './beverage-repository.service';
+import {MockBeverageRepositoryService} from './mock-beverage-repository.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import {BeverageRepositoryService} from './beverage-repository.service';
 export class BeverageService {
 
   constructor(
-    private _beverageRepository: BeverageRepositoryService
+    private _beverageRepository: MockBeverageRepositoryService
   ) { }
 
   findAll(): Promise<Beverage[]> {
