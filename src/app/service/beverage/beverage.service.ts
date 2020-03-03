@@ -9,7 +9,7 @@ import {MockBeverageRepositoryService} from './mock-beverage-repository.service'
 export class BeverageService {
 
   constructor(
-    private _beverageRepository: MockBeverageRepositoryService
+    private _beverageRepository: BeverageRepositoryService
   ) { }
 
   findAll(): Promise<Beverage[]> {

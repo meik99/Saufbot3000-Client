@@ -3,13 +3,13 @@ import {Beverage} from './Beverage';
 export class Pump {
   private _id = 0;
   private _colors = [];
-  private _beverage = 0;
+  private _beverageId = 0;
   private _pin = 0;
 
   constructor(args?: {
     id?: number,
     colors?: string[],
-    beverage?: number,
+    beverageId?: number,
     pin?: number
   }) {
     if (args) {
@@ -19,8 +19,8 @@ export class Pump {
       if (args.colors) {
         this.colors = args.colors;
       }
-      if (args.beverage) {
-        this.beverage = args.beverage;
+      if (args.beverageId) {
+        this.beverageId = args.beverageId;
       }
       if (args.pin) {
         this.pin = args.pin;
@@ -36,20 +36,20 @@ export class Pump {
     this._id = value;
   }
 
-  get colors(): any[] {
+  get colors(): string[] {
     return this._colors;
   }
 
-  set colors(value: any[]) {
+  set colors(value: string[]) {
     this._colors = value;
   }
 
-  get beverage(): any {
-    return this._beverage;
+  get beverageId(): number {
+    return this._beverageId;
   }
 
-  set beverage(value: any) {
-    this._beverage = value;
+  set beverageId(value: number) {
+    this._beverageId = value;
   }
 
   get pin(): number {

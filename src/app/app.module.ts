@@ -9,6 +9,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { PumpComponent } from './pump/pump.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { IngredientComponent } from './recipe/ingredient/ingredient.component';
+import { BrewComponent } from './brew/brew.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { IngredientComponent } from './recipe/ingredient/ingredient.component';
     BeverageComponent,
     PumpComponent,
     RecipeComponent,
-    IngredientComponent
+    IngredientComponent,
+    BrewComponent
   ],
   imports: [
     BrowserModule,

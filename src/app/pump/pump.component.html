@@ -45,7 +45,7 @@
           <div class="col-2">
             <div class="form-group">
               <label for="beverage{{pump.id}}">Zutat</label>
-              <select class="form-control" id="beverage{{pump.id}}" [(ngModel)]="pump.beverage" (ngModelChange)="updatePump(pump)">
+              <select class="form-control" id="beverage{{pump.id}}" [(ngModel)]="pump.beverageId" (ngModelChange)="updatePump($event, pump)">
                 <option [value]="0">Nichts</option>
                 <option *ngFor="let beverage of beverages" [value]="beverage.id">{{beverage.name}}</option>
               </select>

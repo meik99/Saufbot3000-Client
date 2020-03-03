@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {PumpService} from '../service/pump/pump.service';
 import {BeverageService} from '../service/beverage/beverage.service';
 import {Pump} from '../../entity/Pump';
+import {Beverage} from '../../entity/Beverage';
 
 @Component({
   selector: 'app-pump',
@@ -9,8 +10,8 @@ import {Pump} from '../../entity/Pump';
   styleUrls: ['./pump.component.css']
 })
 export class PumpComponent implements OnInit {
-  pumps = [];
-  beverages = [];
+  pumps: Pump[] = [];
+  beverages: Beverage[] = [];
 
   constructor(
     private _pumpService: PumpService,
@@ -30,7 +31,8 @@ export class PumpComponent implements OnInit {
       .catch(err => console.log(err));
   }
 
-  updatePump(pump: Pump) {
+  updatePump(selected: string, pump: Pump) {
+    pump.beverageId = parseInt(selected, 10);
     this._pumpService.update(pump)
       .catch(err => console.log(err));
   }

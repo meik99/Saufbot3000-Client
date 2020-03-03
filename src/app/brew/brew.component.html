@@ -1,0 +1,22 @@
+<div class="row mt-4">
+  <div class="col-12">
+    <h1>Zubereitung</h1>
+    <hr>
+  </div>
+</div>
+<div class="row mt-4">
+  <div class="col-12">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let recipe of recipes">
+        <div class="row">
+          <div class="col-10 mt-1">
+            {{recipe.name}}
+          </div>
+          <div class="col-2">
+            <button type="button" class="btn btn-primary">Zubereiten</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
