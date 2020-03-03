@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Recipe} from '../../../entity/Recipe';
 import {MockRecipeRepositoryService} from './mock-recipe-repository.service';
 import {RecipeBeverage} from '../../../entity/RecipeBeverage';
+import {RecipeRepositoryService} from './recipe-repository.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import {RecipeBeverage} from '../../../entity/RecipeBeverage';
 export class RecipeService {
 
   constructor(
-    private _recipeRepository: MockRecipeRepositoryService
+    private _recipeRepository: RecipeRepositoryService
   ) { }
 
   findAll(): Promise<Recipe[]> {
