@@ -7,12 +7,16 @@ import {FormsModule} from '@angular/forms';
 import { BeverageComponent } from './beverage/beverage.component';
 import {HttpClientModule} from '@angular/common/http';
 import { PumpComponent } from './pump/pump.component';
+import { RecipeComponent } from './recipe/recipe.component';
+import { IngredientComponent } from './recipe/ingredient/ingredient.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BeverageComponent,
-    PumpComponent
+    PumpComponent,
+    RecipeComponent,
+    IngredientComponent
   ],
   imports: [
     BrowserModule,

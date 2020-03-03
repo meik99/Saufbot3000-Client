@@ -11,14 +11,14 @@
         <div class="card-body">
           <p class="card-text">
             <div class="form-group">
-              <label for="id">Id</label>
-              <input id="id" type="text" class="form-control" [ngModel]="beverage.id" disabled>
+              <label for="id{{beverage.id}}">Id</label>
+              <input id="id{{beverage.id}}" type="text" class="form-control" [ngModel]="beverage.id" disabled>
             </div>
             <div class="form-group">
-              <label for="name">Name</label>
-              <input id="name" type="text" class="form-control" [(ngModel)]="beverage.name" (ngModelChange)="updateBeverages(beverage)">
+              <label for="name{{beverage.id}}">Name</label>
+              <input id="name{{beverage.id}}" type="text" class="form-control" [(ngModel)]="beverage.name" (ngModelChange)="updateBeverages(beverage)">
             </div>
-          <button class="btn btn-outline-primary" (click)="removeBeverage(beverage)">Entfernen</button>
+          <button class="btn btn-outline-danger" (click)="removeBeverage(beverage)">Entfernen</button>
         </div>
       </div>
     </div>

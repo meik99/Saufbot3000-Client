@@ -1,0 +1,37 @@
+<div class="row mt-4">
+  <div class="col-12">
+    <h1>Rezepte</h1>
+    <hr>
+  </div>
+</div>
+<div class="row" >
+    <div class="col-4 mt-4" *ngFor="let recipe of recipes">
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text">
+            <div class="form-group">
+              <label for="id{{recipe.id}}">Id</label>
+              <input id="id{{recipe.id}}" type="text" class="form-control" [ngModel]="recipe.id" disabled>
+            </div>
+            <div class="form-group">
+              <label for="name{{recipe.id}}">Name</label>
+              <input id="name{{recipe.id}}" type="text" class="form-control" [(ngModel)]="recipe.name" (ngModelChange)="updateRecipe(recipe)">
+            </div>
+
+          <button type="button" class="btn btn-outline-primary mr-1" (click)="selectRecipe(recipe)">
+            Bearbeiten
+          </button>
+          <button class="btn btn-outline-danger" (click)="removeRecipe(recipe)">Entfernen</button>
+        </div>
+      </div>
+    </div>
+  <div class="col-4 mt-4">
+    <div class="card">
+      <div class="card-body">
+        <button class="btn btn-outline-primary btn-block" (click)="addRecipe()">Hinzufügen</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-ingredient [recipe]="selectedRecipe" [onShow]="onShowModal"></app-ingredient>

@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {BeverageComponent} from './beverage/beverage.component';
 import {PumpComponent} from './pump/pump.component';
+import {RecipeComponent} from './recipe/recipe.component';
 
 const routes: Routes = [
   {
     path: "",
-    component: BeverageComponent
+    redirectTo: "beverage",
+    pathMatch: "full"
   },
   {
     path: "beverage",
@@ -15,6 +17,10 @@ const routes: Routes = [
   {
     path: "pump",
     component: PumpComponent
+  },
+  {
+    path: "recipe",
+    component: RecipeComponent
   }
 ];
 
