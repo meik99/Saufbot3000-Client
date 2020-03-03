@@ -26,13 +26,7 @@ export class BrewComponent implements OnInit {
           .then(recipes => {
             this.recipes = recipes;
 
-
-            console.log(this.pumps);
-            console.log(this.recipes);
-
             recipes.forEach(recipe => {
-              console.log(recipe);
-
               this._recipeService.findIngredients(recipe)
                 .then(ingredients => {
 
@@ -42,7 +36,6 @@ export class BrewComponent implements OnInit {
 
                     if (!pumpWithIngredient) {
                       this.recipes = this.recipes.filter(item => item.id !== recipe.id);
-                      console.log(this.recipes);
                     }
                   });
 
