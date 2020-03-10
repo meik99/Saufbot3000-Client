@@ -3,6 +3,7 @@ import {PumpService} from '../service/pump/pump.service';
 import {Pump} from '../../entity/Pump';
 import {RecipeService} from '../service/recipe/recipe.service';
 import {Recipe} from '../../entity/Recipe';
+import {BrewService} from '../service/brew/brew.service';
 
 @Component({
   selector: 'app-brew',
@@ -15,7 +16,8 @@ export class BrewComponent implements OnInit {
 
   constructor(
     private _pumpService: PumpService,
-    private _recipeService: RecipeService
+    private _recipeService: RecipeService,
+    private _brewService: BrewService
   ) { }
 
   ngOnInit(): void {
@@ -47,4 +49,8 @@ export class BrewComponent implements OnInit {
       .catch(err => console.log(err));
   }
 
+  brew(recipe: Recipe) {
+    this._brewService.brew(recipe)
+      .catch(err => console.log(err));
+  }
 }
