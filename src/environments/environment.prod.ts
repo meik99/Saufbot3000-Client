@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  api_url: "http://192.168.0.12:8000/api/v1/"
+  api_url: "http://saufbot-server/api/v1/"
 };
